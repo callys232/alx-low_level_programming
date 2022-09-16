@@ -5,23 +5,21 @@
  * @size: parameter
  * Return: returns nothing
  */
-void print_square(int size)
-{
-	int incl, inc2;
+
+print_square(int size)
+
+	int n, x;
 
 	if (size > 0)
+{
+	for (n = 0; n < size; n++)
 	{
-		for (inc2 = 0; inc2 < (size - 1); inc2++)
+		for (x = 0; x < size; x++)
 		{
-			putchar('#');
+			_putchar('#');
 		}
-
-		putchar('#');
-		putchar('\n');
+		_putchar('\n');
 	}
 }
-else
-{
-	putchar('\n');
-}
-}
+else if (size <= 0)
+	_putchar('\n');
