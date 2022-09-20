@@ -1,15 +1,16 @@
 #include "main.h"
 /**
- * puts2 - prints one char out of 2 of a string
- * @str:input string.
- * Return: no return
+ * puts2 - prints only character
+ * @str: input
+ * Return: print
  */
 void puts2(char *str)
 {
 	int i = 0;
+
 	for (; str[i] != '\0'; i++)
 	{
-		if (i % 2) == 0)
+		if ((i % 2) == 0)
 			_putchar(str[i]);
 		else
 			continue;
