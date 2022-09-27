@@ -1,23 +1,25 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * leet - encodes a string into 1337
- * @s: string to encode
+ * print_diagsums - prints the sums of the two diagonals of a square matrix
+ * @a: pointer to start of matric
+ * @size: width of matrix column
  *
- * Return: address of s
+ * Return: void
  */
-char *leet(char *s)
+void print_diagsums(int *a, int size)
 {
-	int i, j;
-	char a[] = "aAeEoOtTlL";
-	char b[] = "4433007711";
+	int i, j, p, l = 0, r = 0;
 
-	for (i = 0; *(s + i); i++)
+	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j <= 9; j++)
-		{
-			if (a[j] == *(s + i))
-				*(s + i) = b[j];
-		}
+		p = (i * size) + i;
+		l += *(a + p);
 	}
-	return (s);
+	for (j = 0; j < size; j++)
+	{
+		p = (j * size) + (size - 1 - j);
+		r += *(a + p);
+	}
+	printf("%i, %i\n", l, r);
 }

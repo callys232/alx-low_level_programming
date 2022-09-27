@@ -1,26 +1,11 @@
 #include "main.h"
 /**
- * rot13 - encodes a string into rot13
- * @s: string to encode
- *
- * Return: address of s
+ * set_string - sets the value of a pointer to a char
+ * @s: pointer to change
+ * @to: string to change pointer to
+ * Return: void
  */
-char *rot13(char *s)
+void set_string(char **s, char *to)
 {
-	int i, j;
-	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char b[] = "nopqrstuvwxyzabcdefghjklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-
-	for (i = 0; *(s + i); i++)
-	{
-		for (j = 0; j < 52; j++)
-		{
-			if (a[j] == *(s + i))
-			{
-				*(s + i) = b[j];
-				break;
-			}
-		}
-	}
-	return (s);
+	*s = to;
 }
