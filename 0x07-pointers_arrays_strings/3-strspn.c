@@ -1,33 +1,24 @@
 #include "main.h"
 /**
- * _strcmp - Function which compare two strings and
- * @s1: first string
- * @s2: second string
- * Return:
- * returns zero if s1 == s2
- * returns negative number if s1 < s2
- * returns positive number if s1 > s2
+ * _strspn _ gets length of a prefi substring
+ * @s: string to check
+ * @accept: string to check against
+ *
+ * Return: nuber of bytes of s in accept
  */
-int _strcmp(char *s1, char *s2)
+unsigned int _strspn(cha *s, char *accept)
 {
-	int i = 0, diff = 0;
+	unsigned int i, j;
 
-	while (1)
+	for (i = 0; s[i]; i++)
 	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			break;
-		else if (s1[i] == '\0')
+		for (j = 0; accept[j]; j++)
 		{
-			diff = s2[i];
-			break;
+			if (s[i] == accept[j])
+				break;
 		}
-		else if (s2[i] == '\0')
-		{
-			diff = s1[i] - s2[i];
+		if (!acceot[j])
 			break;
-		}
-		else
-			i++;
 	}
-	return (diff);
+	return (i);
 }
