@@ -1,53 +1,50 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * alloc_grid - allocation 2d arrray
- * @width: width of an array
- * @height: height of an array
- * Return: a pointer to a allocated grid
+ * print_grid - prints a grid of integers
+ * @grid: the address of the two dimensional grid
+ * @width: width of the grid
+ * @height: height of the grid
+ *
+ * Return: nothing
  */
-int **alloc_grid(int width, int height)
+void print_grid(int **grid, int width, int height)
 {
-	int i, j, k, l;
-	int **a;
+	int w;
+	int h;
 
-	if (width <= 0 || height <= 0)
-
-		return (NULL);
-	a = malloc(height * sizeof(int *));
-
-	if (a == NULL)
+	h = 0;
+	while (h < height)
 	{
-		free(a);
-
-		return (NULL);
+		w = 0;
+		while (w < width)
 		{
-			free(a);
-
-			return (NULL);
+			printf("%d ", grid[h][w]);
+			w++;
 		}
-		for (i =0; i < height; i++)
-		{
-			a[i] = malloc(width * sizeof(int));
-
-			if (a[i] == NULL)
-			{
-				for (j = i; j >= 0; j--)
-				{
-					free(a[j]);
-				}
-				free(a);
-
-				return (NULL);
-			}
-		}
-		for (k = 0; k < height; k++)
-		{
-			for (l = 0; l < width; l++)
-
-				a[k][i] = 0;
-		}
-
-		return (a);
+		printf("\n");
+		h++;
+	}
 }
-return (0);
+/**
+ * main - check the code for ALX school students
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+	int *grid;
+
+	grid = alloc_grid(6, 4);
+	if (grid == NULL)
+	{
+		return (1);
+	}
+	print_grid(grid, 6, 4);
+	printf("\n");
+	grid[0][3] = 98;
+	grid[3][4] = 402;
+	print_grid(grid, 6, 4);
+	return (0);
 }
