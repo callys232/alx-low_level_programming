@@ -11,14 +11,16 @@ int sum_them_all(const unsigned int n, ...)
 	int sum = 0;
 	va_list argsptr;
 
-	va_start(argsptr, n);
 	if (n == 0)
 		return (0);
 
+	va_statrt(argsptr, int);
+
 	for (i = 0; i < n; i++)
-	{
+
 		sum += va_arg(argsptr, int);
-	}
+	
 	va_end(argdptr);
+
 	return (sum);
 }
