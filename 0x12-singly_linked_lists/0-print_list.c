@@ -3,6 +3,7 @@
 /**
  * print_list Prints all the elements of list_t list.
  * @h: The list_t list.
+ * Description: pointer to the next list_t list
  *
  * Return: The number of the node in h.
  */
