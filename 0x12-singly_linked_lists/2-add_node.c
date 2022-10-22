@@ -19,7 +19,7 @@ int _strlen(const char *s)
 /**
  * add_node - adds a new node at the beginnng of the list_t list
  * @head: address of the node
- * @st: strinf to addd
+ * @str: strinf to addd
  * Return: affress of the new element, NULL if ti fails
  */
 list_t *add_node(list_t **head, const char *str)
