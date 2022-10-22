@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * free_list - frees a list_t list
- * @hea: the beginning of the list to free
+ * @head: the beginning of the list to free
  * Return: nothing
  */
 void free_list(list_t *head)
