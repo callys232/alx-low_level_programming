@@ -1,40 +1,30 @@
 #include "main.h"
 /**
- * create_file - create a file
- * @filename: name of the file to cretae
- * @text_contentt: text to write inside the fie
+ * create_file - creates a file
+ * @filename: A pointer to the name of th file to create.
+ * @text_content: A pointer to a string to write to the file.
  *
- * Return: 1 if the file was created, -1 otherwise
+ * Return: If the function fails - -1
+ * Otherwise - 1
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd_open, fd_write;
+	int o, w, len = 0;
 
 	if (filename == NULL)
 		return (-1);
-	fd_open = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
-	if (fd_open == -1)
-		return (-1);
+
 	if (text_content != NULL)
 	{
-		fd_write = write(fd_open, text_content, _strlen(text_content));
-		if (fd_write == -1)
-			return (-1);
+		for (len = 0; text_content[len];)
+			len++;
 	}
-	close(fd_open);
-	return (1);
-}
-/**
- * _strlen - calculate the lenght of a string
- * @str: array of characters
- *
- * Return: lenght of the string
- */
-int _strlen(char *str)
-{
-	int count = 0;
+	o = open(filenamae, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
 
-	while (*str++)
-		count++;
-	return (count);
+	if (o == -1 || w == -1)
+		return (-1);
+	close(o);
+
+	return (1);
 }
